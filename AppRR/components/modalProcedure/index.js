@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import {Modal, Text, View} from 'react-native'
-import modalCitaStyle from './styles'
 import {ButtonIOS} from '../../components'
 import * as Progress from 'react-native-progress';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -44,10 +43,15 @@ export default class ModalProcedure extends Component <Props> {
           visible={this.props.visible}
           onRequestClose={this.props.setModalVisible}>
           <View style={{alignItems: 'center', justifyContent: 'center', flex: 1,backgroundColor: 'rgba(0,0,0,0.4)'}}>
-	          <View style={{backgroundColor: 'white',borderRadius: 10,borderWidth: 3,borderStyle: "solid",borderColor: 'green',width: '85%', height: '75%',padding:15}}>
+	          <View style={{backgroundColor: 'white',borderRadius: 15,borderWidth: 3,borderStyle: "solid",borderColor: 'green',width: '85%', height: '75%',padding:5}}>
 	            <View style={{flex:1,justifyContent:'space-evenly'}}>
-								<Text>{this.props.nombre}</Text>
-								<Text>{this.props.tipo}</Text>
+							  <View style={{backgroundColor:'yellow', width:'60%', alignSelf:'center', padding:4, borderRadius:5,borderWidth: 2,borderStyle: "solid",borderColor: 'black'}}>
+									<Text style={{fontWeight:'bold'}}><Icon name='star' size={15}/>Opcion Recomendada</Text>
+								</View>
+								<View style={{alignItems:'center'}}>
+									<Text style={{textAlign:'center',fontSize:30}}>{this.props.nombre}</Text>
+									<Text>{this.props.tipo}</Text>
+								</View>
 								<Text>{this.props.especialidad}</Text>
 								<Text>{this.props.ubicacion}</Text>
 								<Text>{this.props.horario}</Text>

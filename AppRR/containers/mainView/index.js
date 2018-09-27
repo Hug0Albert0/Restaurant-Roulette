@@ -98,17 +98,17 @@ export default class MainView extends Component <Props> {
 							</View>
 					</View>
 					<ModalCita modalVisible={this.state.modalVisible} setModalVisible={()=> {this.setModalVisible()}}/>
-					{/*<ModalProcedure
+					{<ModalProcedure
 						visible={this.state.modalRestaurante}
 						setModalVisible= {()=>this.closeModal()}
-						encargado={this.state.item.encargado}
-						especialidad={this.state.item.especialidad}
-						horario={this.state.item.horario}
-						nombre={this.state.item.nombre}
-						telefono={this.state.item.telefono}
-						tipo={this.state.item.tipo}
-						ubicacion={this.state.item.ubicacion}
-					/>*/}
+						encargado="Hugo Rivera"/*{this.state.item.encargado}*/
+						especialidad="Carnes Asadas"/*{this.state.item.especialidad}*/
+						horario="Todos los dias de 1:00pm a 10:00pm"/*{this.state.item.horario}*/
+						nombre="La Guatemalteca"/*{this.state.item.nombre}*/
+						telefono="9933607713"/*{this.state.item.telefono}*/
+						tipo="Restaurant Familiar"/*{this.state.item.tipo}*/
+						ubicacion="Villlahermosa, Tabasco"/*{this.state.item.ubicacion}*/
+					/>}
 			  </View>
     	);
     }
