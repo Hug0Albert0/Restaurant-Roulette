@@ -37,23 +37,25 @@ export default class MainView extends Component <Props> {
 			 if (data!=null) {
 				 let arrSnap = Object.values(data);
 				 this.setState({locals:arrSnap.sort(() => Math.random()-0.5)});
-				 console.log("Revueltos",this.state.locals);
+				 //console.log("Revueltos",this.state.locals);
 				 if(this.state.locals.length >0 ) {
 					 this.state.locals.map( item => {
-						 if (item.isPremium == true) {
-							 		this.setState({colaGiros : [...this.state.colaGiros,item]})
-									//this.setState({opcionesPremium: this.state.opcionesPremium-1})
+						 if (item.isPremium === true) {
+						 	for (var i = 0; i <5; i++) {
+								this.setState({colaGiros : [...this.state.colaGiros,item]})
+								}//this.setState({opcionesPremium: this.state.opcionesPremium-1})
 						 }
-						 else if (item.isPremium == false){
+						 else if (item.isPremium === false){
 							 this.setState({colaNormal : [...this.state.colaNormal,item]})
 							 //this.setState({opcionesNormales: this.state.opcionesNormales-1})
 						 }
 					 })
-					 console.log(this.state.colaGiros)
-					console.log(this.state.colaNormal);
-					 this.setState({ruletaTotal:this.state.colaGiros.concat(this.state.colaNormal)})
-
-					 //this.setState({item:this.state.ruletaTotal[Math.floor(Math.random()* this.state.ruletaTotal.length)]})
+					//console.log("Premium",this.state.colaGiros)
+					//console.log("Normales",this.state.colaNormal);
+					this.setState({ruletaTotal:this.state.ruletaTotal.concat(this.state.colaGiros,this.state.colaNormal)})
+					//console.log("Ruletazo",this.state.ruletaTotal)
+					this.setState({item:this.state.ruletaTotal[Math.floor(Math.random()* this.state.ruletaTotal.length)]})
+					console.log(this.state.ruletaTotal);
 				 }
 			 } else {
 				 this.setState({locals: []});
@@ -101,13 +103,13 @@ export default class MainView extends Component <Props> {
 					{<ModalProcedure
 						visible={this.state.modalRestaurante}
 						setModalVisible= {()=>this.closeModal()}
-						encargado="Hugo Rivera"/*{this.state.item.encargado}*/
-						especialidad="Carnes Asadas"/*{this.state.item.especialidad}*/
-						horario="Todos los dias de 1:00pm a 10:00pm"/*{this.state.item.horario}*/
-						nombre="La Guatemalteca"/*{this.state.item.nombre}*/
-						telefono="9933607713"/*{this.state.item.telefono}*/
-						tipo="Restaurant Familiar"/*{this.state.item.tipo}*/
-						ubicacion="Villlahermosa, Tabasco"/*{this.state.item.ubicacion}*/
+						encargado={this.state.item.encargado}
+						especialidad={this.state.item.especialidad}
+						horario={this.state.item.horario}
+						nombre={this.state.item.nombre}
+						telefono={this.state.item.telefono}
+						tipo={this.state.item.tipo}
+						ubicacion={this.state.item.ubicacion}
 					/>}
 			  </View>
     	);
