@@ -43,19 +43,15 @@ export default class MainView extends Component <Props> {
 						 if (item.isPremium === true) {
 						 	for (var i = 0; i <5; i++) {
 								this.setState({colaGiros : [...this.state.colaGiros,item]})
-								}//this.setState({opcionesPremium: this.state.opcionesPremium-1})
+								}
 						 }
 						 else if (item.isPremium === false){
 							 this.setState({colaNormal : [...this.state.colaNormal,item]})
-							 //this.setState({opcionesNormales: this.state.opcionesNormales-1})
 						 }
 					 })
-					//console.log("Premium",this.state.colaGiros)
-					//console.log("Normales",this.state.colaNormal);
 					this.setState({ruletaTotal:this.state.ruletaTotal.concat(this.state.colaGiros,this.state.colaNormal)})
-					//console.log("Ruletazo",this.state.ruletaTotal)
 					this.setState({item:this.state.ruletaTotal[Math.floor(Math.random()* this.state.ruletaTotal.length)]})
-					console.log(this.state.ruletaTotal);
+					console.log(this.state.item)
 				 }
 			 } else {
 				 this.setState({locals: []});
@@ -68,7 +64,7 @@ export default class MainView extends Component <Props> {
 		  setTimeout(() => {
 				this.setState({modalVisible:false})
 				this.setState({modalRestaurante:true})
-			}, 1000);
+			}, 500);
 	}
 
 	closeModal () {
@@ -76,9 +72,8 @@ export default class MainView extends Component <Props> {
 	}
 
 	takeItem() {
-	this.setState({item:this.state.ruletaTotal[Math.floor(Math.random()* this.state.ruletaTotal.length)]})
+		this.setState({item:this.state.ruletaTotal[Math.floor(Math.random()* this.state.ruletaTotal.length)]})
 	//console.log(this.state.item)
-
 	}
 
     render () {
