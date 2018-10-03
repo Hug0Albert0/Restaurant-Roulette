@@ -1,0 +1,26 @@
+{
+  "name": "react-demo-itvh",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://Hug0Albert0.github.io/demo-residencia",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.4",
+    "@fortawesome/free-solid-svg-icons": "^5.3.1",
+    "@fortawesome/react-fontawesome": "^0.1.3",
+    "bootstrap": "^4.1.1",
+    "firebase": "4.8.0",
+    "gh-pages": "^1.1.0",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-scripts": "1.1.4",
+    "reactstrap": "^5.0.0"
+  },
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
